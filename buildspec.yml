@@ -9,7 +9,7 @@ phases:
     - echo Logging in to Amazon ECR....
     - aws --version
     # login to Elastic container registry
-    - eval $(aws ecr get-login-password --region us-east-1 --no-include-email | sed 's|https://||')
+    - eval $(aws ecr get-login-password --region us-east-1 | sed 's|https://||')
     - REPOSITORY_URI=306242346372.dkr.ecr.us-east-1.amazonaws.com/eremitic/laravel-docker-aws
     - IMAGE_TAG=1.0
   build:
